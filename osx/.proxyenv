@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# http://www.cnblogs.com/scue/p/3891879.html
+# http://www.jianshu.com/p/f5690454c6e0
+# http://gaocegege.com/Blog/%E9%9A%8F%E7%AC%94/shadowsocks-with-terminal
+
+# for terminal
+brew services restart privoxy
+
+export proxyserveraddr=127.0.0.1
+export proxyserverport=8118
+export http_proxy="http://$proxyserveraddr:$proxyserverport/"
+export https_proxy="http://$proxyserveraddr:$proxyserverport/"
+export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com,200.200..;11.11.0.0;"
+
+git config --global http.proxy 'socks5://127.0.0.1:1080'
+git config --global https.proxy 'socks5://127.0.0.1:1080'

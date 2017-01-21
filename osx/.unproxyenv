@@ -1,0 +1,12 @@
+#!/bin/sh
+
+unset proxyserveraddr
+unset proxyserverport
+unset http_proxy
+unset https_proxy
+unset no_proxy
+
+brew services stop privoxy
+
+git config --global --unset http.proxy
+git config --global --unset https.proxy
